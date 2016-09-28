@@ -22,7 +22,8 @@
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/title_activity_news"
             android:theme="@style/FullscreenTheme" />
-        <activity android:name=".AudioNewsActivity"></activity>
+        <activity android:name=".AudioNewsActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>

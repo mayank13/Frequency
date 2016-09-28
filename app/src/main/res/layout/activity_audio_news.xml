@@ -62,15 +62,8 @@
         android:layout_alignLeft="@+id/textView3"
         android:layout_alignStart="@+id/textView3"
         android:layout_marginBottom="99dp"
-        android:id="@+id/imageButton" />
-
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/play"
-        android:layout_alignBottom="@+id/imageButton"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/imageButton2" />
+        android:id="@+id/imageButton"
+        android:background="@android:color/transparent" />
 
     <SeekBar
         android:layout_width="wrap_content"
@@ -101,5 +94,25 @@
         android:id="@+id/imageButton3"
         android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/news_seekbar"
-        android:layout_alignStart="@+id/news_seekbar" />
+        android:layout_alignStart="@+id/news_seekbar"
+        android:background="@android:color/transparent" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/play"
+        android:id="@+id/imageButton2"
+        android:background="@android:color/transparent"
+        android:layout_alignBottom="@+id/imageButton"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView5"
+        tools:text="@string/radionews_share"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 </RelativeLayout>
