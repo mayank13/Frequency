@@ -4,6 +4,7 @@ import android.media.MediaPlayer;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -11,6 +12,9 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 public class AudioNewsActivity extends AppCompatActivity {
@@ -22,6 +26,7 @@ public class AudioNewsActivity extends AppCompatActivity {
     private int backwardTime = 10000;
     private SeekBar seekbar;
     private TextView time;
+    private TextView date;
     public static int oneTimeOnly = 0;
 
     @Override
@@ -31,15 +36,33 @@ public class AudioNewsActivity extends AppCompatActivity {
 
         playButton = (ImageButton) findViewById(R.id.play_button);
         time = (TextView)findViewById(R.id.news_timer);
+        date = (TextView) findViewById(R.id.date);
         mediaPlayer = MediaPlayer.create(this, R.raw.sample);
         seekbar=(SeekBar)findViewById(R.id.news_seekbar);
         seekbar.setClickable(false);
 
+        date.setText(getFormattedTodaysDate());
+
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Playing sound",Toast.LENGTH_SHORT).show();
-                mediaPlayer.start();
+
+                if(mediaPlayer.isPlaying()){
+                    if(mediaPlayer!=null){
+                        mediaPlayer.pause();
+                        // Changing button image to play button
+                        playButton.setImageResource(R.drawable.play);
+                    }
+                }else{
+                    // Resume song
+                    if(mediaPlayer!=null){
+                        mediaPlayer.start();
+                        // Changing button image to pause button
+                        playButton.setImageResource(R.drawable.pause);
+                    }
+                }
+               // Toast.makeText(getApplicationContext(), "Playing sound",Toast.LENGTH_SHORT).show();
+               // mediaPlayer.start();
 
                 finalTime = mediaPlayer.getDuration();
                 startTime = mediaPlayer.getCurrentPosition();
@@ -76,4 +99,27 @@ public class AudioNewsActivity extends AppCompatActivity {
             myHandler.postDelayed(this, 100);
         }
     };
+
+    String getDayOfMonthSuffix(final int n) {
+        if (n >= 11 && n <= 13) {
+            return "th";
+        }
+        switch (n % 10) {
+            case 1:  return "st";
+            case 2:  return "nd";
+            case 3:  return "rd";
+            default: return "th";
+        }
+    }
+
+    String getFormattedTodaysDate(){
+        Date todaysDate = new Date();
+        SimpleDateFormat formatDayOfMonth  = new SimpleDateFormat("d");
+        SimpleDateFormat monthOfDate = new SimpleDateFormat("MMMM",Locale.US);
+        int day = Integer.parseInt(formatDayOfMonth.format(todaysDate));
+        String month = monthOfDate.format(todaysDate);
+        String formattedDate = day + getDayOfMonthSuffix(day) + " "+ month;
+        return formattedDate;
+    }
+
 }

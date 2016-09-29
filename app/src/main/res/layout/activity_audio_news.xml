@@ -20,11 +20,11 @@
         android:layout_alignParentStart="true"
         android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="14dp"
+        android:layout_marginTop="102.5dp"
         android:id="@+id/frequency_logo" />
 
     <TextView
-        android:text="TextView"
+        android:text="@string/radio_news_tagline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/frequency_logo"
@@ -32,7 +32,7 @@
         android:layout_alignStart="@+id/frequency_logo"
         android:layout_marginTop="8.5dp"
         android:id="@+id/textView"
-        tools:text="@string/radionews_tagline" />
+        android:fontFamily="sans-serif" />
 
     <TextView
         android:text="TextView"
@@ -42,14 +42,13 @@
         android:layout_alignLeft="@+id/textView2"
         android:layout_alignStart="@+id/textView2"
         android:layout_marginTop="6dp"
-        android:id="@+id/textView3" />
+        android:id="@+id/date" />
 
     <TextView
-        android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
-        tools:text="@string/radionews_tagline_sec"
+        android:text="@string/radio_news_tagline_sec"
         android:layout_below="@+id/textView"
         android:layout_alignLeft="@+id/textView"
         android:layout_alignStart="@+id/textView" />
@@ -59,8 +58,8 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/back"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_alignStart="@+id/textView3"
+        android:layout_alignLeft="@+id/date"
+        android:layout_alignStart="@+id/date"
         android:layout_marginBottom="99dp"
         android:id="@+id/imageButton"
         android:background="@android:color/transparent" />
@@ -111,8 +110,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView5"
-        tools:text="@string/radionews_share"
+        tools:text="@string/radio_news_share"
         android:layout_alignParentBottom="true"
-        android:layout_alignRight="@+id/textView3"
-        android:layout_alignEnd="@+id/textView3" />
+        android:layout_alignRight="@+id/date"
+        android:layout_alignEnd="@+id/date" />
 </RelativeLayout>

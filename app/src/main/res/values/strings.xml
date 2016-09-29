@@ -6,8 +6,8 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="frequency_tagline">Important Audio News.</string>
     <string name="frequency_tagline_sec">Everyday.</string>
-    <string name="radionews_tagline">You\'re listening to</string>
-    <string name="radionews_tagline_sec">Today\'s news.</string>
-    <string name="radionews_share">Share</string>
+    <string name="radio_news_tagline">You\'re listening to</string>
+    <string name="radio_news_tagline_sec">Today\'s news.</string>
+    <string name="radio_news_share">Share</string>
 
 </resources>
