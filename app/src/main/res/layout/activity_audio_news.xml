@@ -68,7 +68,7 @@
     <SeekBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton2"
+        android:layout_below="@+id/play_button"
         android:layout_marginTop="28dp"
         android:id="@+id/news_seekbar"
         android:layout_alignLeft="@+id/imageButton"
@@ -80,7 +80,7 @@
         android:text="TextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageButton2"
+        android:layout_below="@+id/play_button"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="29dp"
@@ -101,7 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/play"
-        android:id="@+id/imageButton2"
+        android:id="@+id/play_button"
         android:background="@android:color/transparent"
         android:layout_alignBottom="@+id/imageButton"
         android:layout_centerHorizontal="true" />
