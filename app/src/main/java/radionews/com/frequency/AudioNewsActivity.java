@@ -57,6 +57,24 @@ public class AudioNewsActivity extends AppCompatActivity {
                     // Resume song
                     if(mediaPlayer!=null){
                         mediaPlayer.start();
+                        finalTime = mediaPlayer.getDuration();
+                        startTime = mediaPlayer.getCurrentPosition();
+
+                        if (oneTimeOnly == 0) {
+                            seekbar.setMax((int) finalTime);
+                            oneTimeOnly = 1;
+
+                            time.setText(String.format("%d min, %d sec",
+                                    TimeUnit.MILLISECONDS.toMinutes((long) finalTime),
+                                    TimeUnit.MILLISECONDS.toSeconds((long) finalTime) -
+                                            TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) finalTime)))
+                            );
+
+                            seekbar.setProgress((int)startTime);
+                            myHandler.postDelayed(UpdateSongTime,100);
+
+                        }
+
                         // Changing button image to pause button
                         playButton.setImageResource(R.drawable.pause);
                     }
@@ -64,21 +82,7 @@ public class AudioNewsActivity extends AppCompatActivity {
                // Toast.makeText(getApplicationContext(), "Playing sound",Toast.LENGTH_SHORT).show();
                // mediaPlayer.start();
 
-                finalTime = mediaPlayer.getDuration();
-                startTime = mediaPlayer.getCurrentPosition();
 
-                if (oneTimeOnly == 0) {
-                    seekbar.setMax((int) finalTime);
-                    oneTimeOnly = 1;
-                }
-                time.setText(String.format("%d min, %d sec",
-                        TimeUnit.MILLISECONDS.toMinutes((long) finalTime),
-                        TimeUnit.MILLISECONDS.toSeconds((long) finalTime) -
-                                TimeUnit.MINUTES.toSeconds(TimeUnit.MILLISECONDS.toMinutes((long) finalTime)))
-                );
-
-                seekbar.setProgress((int)startTime);
-                myHandler.postDelayed(UpdateSongTime,100);
 
             }
         });
