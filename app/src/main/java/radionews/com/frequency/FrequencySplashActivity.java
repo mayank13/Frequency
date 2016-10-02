@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.WindowManager;
 
+import radionews.com.frequency.common.FontHelper;
+
 public class FrequencySplashActivity extends AppCompatActivity {
     // Splash screen timer
     private static int SPLASH_TIME_OUT = 3000;
@@ -17,6 +19,7 @@ public class FrequencySplashActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_frequency_splash);
+        FontHelper.applyFont(this, findViewById(R.id.activity_frequency_splash));
 
         new Handler().postDelayed(new Runnable() {
 
