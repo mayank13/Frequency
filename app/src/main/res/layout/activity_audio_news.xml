@@ -42,10 +42,11 @@
         android:layout_alignStart="@+id/textView2"
         android:layout_below="@+id/textView2"
         android:layout_marginTop="6dp"
-        android:text="TextView" />
+        />
 
     <TextView
         android:id="@+id/textView2"
+        android:tag="title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"

@@ -17,6 +17,8 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
+import radionews.com.frequency.common.FontHelper;
+
 public class AudioNewsActivity extends AppCompatActivity {
     private ImageButton playButton;
     private MediaPlayer mediaPlayer;
@@ -33,6 +35,8 @@ public class AudioNewsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_news);
+
+        FontHelper.applyFont(this, findViewById(R.id.activity_audio_news));
 
         playButton = (ImageButton) findViewById(R.id.play_button);
         time = (TextView)findViewById(R.id.news_timer);
